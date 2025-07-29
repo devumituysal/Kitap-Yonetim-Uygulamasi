@@ -24,6 +24,20 @@ namespace KitapYonetim.Api.Controllers
         //    return  _books.Find(a => a.Id == id);
         //}
 
+        [HttpPost]
+        public void AddBook(string title, string author, int publishedYear)
+        {
+            var item = new Book
+            {
+                Id = _books.Count + 1,
+                Title = title,
+                Author = author,
+                PublishedYear = publishedYear
+            };
+
+            _books.Add(item);
+        }
+
         //[HttpPut("{id}")]                                 *************************** id ye göre tek kitap güncelleme************
 
         //public void UpdateBook(int id,string title,string author,int publishedYear)
