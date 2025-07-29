@@ -7,7 +7,13 @@ namespace KitapYonetim.Api.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        static  private List<Book> _books = new();
+        static private List<Book> _books = new List<Book>
+        {
+            new Book { Id=1, Title= "Silmarillion", Author= "John Ronald Reuel Tolkien" ,PublishedYear= 1977 },
+            new Book { Id=2, Title= "Hobbit", Author= "John Ronald Reuel Tolkien" ,PublishedYear= 1937 }
+        };
+
+        
 
         
 
