@@ -31,7 +31,7 @@ namespace KitapYonetim.Api.Controllers
         //}
 
         [HttpPost]
-        public void AddBook(string title, string author, int publishedYear)
+        public IActionResult AddBook(string title, string author, int publishedYear)
         {
             var item = new Book
             {
@@ -42,6 +42,7 @@ namespace KitapYonetim.Api.Controllers
             };
 
             _books.Add(item);
+            return Ok(item);
         }
 
         //[HttpPut("{id}")]                                 *************************** id ye göre tek kitap güncelleme************
